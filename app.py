@@ -1,16 +1,9 @@
-# app.py
 
-# =============================================================================
-# 1. IMPORTS AND SETUP (No changes here)
-# =============================================================================
 import streamlit as st
 import os
 from huggingface_hub import InferenceClient
 from dotenv import load_dotenv
 
-# =============================================================================
-# 2. API CLIENT INITIALIZATION (No changes here)
-# =============================================================================
 load_dotenv()
 try:
     huggingface_api_key = os.environ['HUGGINGFACE_API_KEY']
@@ -18,9 +11,8 @@ try:
 except KeyError:
     client = None
 
-# =============================================================================
-# 3. CORE AI LOGIC (No changes here)
-# =============================================================================
+# CORE AI LOGIC 
+
 def generate_tweets(topic, client_instance):
     prompt = f"""
     You are an expert social media manager specializing in writing viral tweets.
@@ -48,9 +40,8 @@ def generate_tweets(topic, client_instance):
     except Exception as e:
         return f"An error occurred with the API call: {e}"
 
-# =============================================================================
 # 4. STREAMLIT USER INTERFACE (All changes are here!)
-# =============================================================================
+
 
 ## UI ENHANCEMENT: Set a wider page layout for a more modern feel
 st.set_page_config(layout="wide", page_title="Viral Tweet Generator", page_icon="🐦")
