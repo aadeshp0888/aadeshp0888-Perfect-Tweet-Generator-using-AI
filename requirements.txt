@@ -1,6 +1,4 @@
 streamlit
 huggingface_hub
 transformers
-torch
-gunicorn
-packaging
+torch --index-url https://download.pytorch.org/whl/cpu
