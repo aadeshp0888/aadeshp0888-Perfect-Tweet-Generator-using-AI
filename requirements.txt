@@ -1,4 +1,6 @@
-
 streamlit
+huggingface_hub
+transformers
+torch
 gunicorn
 packaging
